@@ -182,6 +182,7 @@ export interface PortfolioData {
 
   directors: Director[]
 
+  closed_this_quarter: Deal[]
   closing_this_week: Deal[]
   closing_this_quarter: Deal[]
 

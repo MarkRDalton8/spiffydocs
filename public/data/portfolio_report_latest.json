@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T13:45:30.311112",
+  "generated_at": "2026-03-30T13:52:06.925047",
   "period": "Q1 2026",
   "region": "AMER",
   "attainment": {
@@ -17,8 +17,8 @@
   },
   "pipeline": {
     "total": 4822424.859999999,
-    "weighted": 0,
-    "coverage_ratio": 0,
+    "weighted": 2106339.502,
+    "coverage_ratio": 0.655160031726283,
     "nb_pipeline": 4107078.3199999994,
     "nb_weighted": 1843710.076,
     "nb_coverage": 2.5043160487804874,
@@ -152,6 +152,1151 @@
           "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000mkbvNYAQ/view"
         }
       ]
+    }
+  ],
+  "closed_this_quarter": [
+    {
+      "opportunity_id": "006IV00000dkwDrYAI",
+      "opportunity_name": "Recurrent Ventures - PSI - Renewal + Upsell - SaaS - Amplifier - (2026-01-01 - 2026-12-31)",
+      "account_id": "0014w00002trbFOAAY",
+      "account_name": "Recurrent Ventures",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 25000.0,
+      "converted_amount": 200.0,
+      "close_date": "2026-01-14",
+      "probability": 100.0,
+      "owner": "Calie Coghlan",
+      "owner_email": "calie.coghlan@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-01-02T16:39:46.000+0000",
+      "last_activity_date": "2026-01-28",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Amplifier",
+      "arr": 25000.0,
+      "y1_arr": 25000.0,
+      "total_net_arr": 200.0,
+      "average_arr": 25000.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 0.0,
+      "amplifier_acv": 25000.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Calie Coghlan",
+      "stage_history": [
+        {
+          "from_stage": "1 - Renewal Forecasted",
+          "to_stage": "4 - Churn Risk",
+          "changed_date": "2025-10-28T21:00:04.000+0000"
+        },
+        {
+          "from_stage": "1 - Renewal Pending",
+          "to_stage": "2 - Renewal Planning",
+          "changed_date": "2025-12-16T11:26:14.000+0000"
+        },
+        {
+          "from_stage": "2 - Renewal Planning",
+          "to_stage": "3 - Evaluate & Align",
+          "changed_date": "2025-12-19T18:29:57.000+0000"
+        },
+        {
+          "from_stage": "3 - Evaluate & Align",
+          "to_stage": "4 - Propose & Negotiate",
+          "changed_date": "2025-12-19T18:30:08.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose & Negotiate",
+          "to_stage": "5 - Prepare Closing",
+          "changed_date": "2025-12-19T18:30:14.000+0000"
+        },
+        {
+          "from_stage": "5 - Prepare Closing",
+          "to_stage": "Renewal Delayed",
+          "changed_date": "2026-01-13T19:45:47.000+0000"
+        },
+        {
+          "from_stage": "Renewal Delayed",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-01-16T16:29:04.000+0000"
+        }
+      ],
+      "days_in_current_stage": 73,
+      "has_runbook": true,
+      "runbook_version": "1.0",
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000dkwDrYAI/view"
+    },
+    {
+      "opportunity_id": "006IV0000112wV6YAI",
+      "opportunity_name": "Christianity Today - PSI - Expansion - Services - Activation - (2026-01-20 - 2026-03-20)",
+      "account_id": "0014w00002nIrinAAC",
+      "account_name": "Christianity Today International",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 1200.0,
+      "converted_amount": 1200.0,
+      "close_date": "2026-01-26",
+      "probability": 100.0,
+      "owner": "Taylor Zimmerman",
+      "owner_email": "taylor.zimmerman@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-10-27T15:47:37.000+0000",
+      "last_activity_date": "2026-02-06",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 0.0,
+      "y1_arr": 0.0,
+      "total_net_arr": 0.0,
+      "average_arr": 0.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 1200.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Taylor Zimmerman",
+      "stage_history": [
+        {
+          "from_stage": "0 - Lead",
+          "to_stage": "5 - Negotiate",
+          "changed_date": "2026-01-26T22:41:29.000+0000"
+        },
+        {
+          "from_stage": "5 - Negotiate",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-01-28T16:10:07.000+0000"
+        }
+      ],
+      "days_in_current_stage": 61,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV0000112wV6YAI/view"
+    },
+    {
+      "opportunity_id": "006IV00000rlIEHYA2",
+      "opportunity_name": "American City - PSI - Expansion - Services - Amplifier - (2026-01-27 - 2027-01-26)",
+      "account_id": "0013g00000BVGyAAAX",
+      "account_name": "American City Business Journals, Inc.",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 35000.0,
+      "converted_amount": 35000.0,
+      "close_date": "2026-01-27",
+      "probability": 100.0,
+      "owner": "Craig Pentland",
+      "owner_email": "craig.pentland@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-07-03T03:04:10.000+0000",
+      "last_activity_date": "2026-02-09",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Amplifier",
+      "arr": 0.0,
+      "y1_arr": null,
+      "total_net_arr": 0.0,
+      "average_arr": 0.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 0.0,
+      "amplifier_acv": 35000.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Daniel Mcmenamin",
+      "stage_history": [
+        {
+          "from_stage": "0 - Lead",
+          "to_stage": "1 - Discover",
+          "changed_date": "2025-12-16T19:21:21.000+0000"
+        },
+        {
+          "from_stage": "1 - Discover",
+          "to_stage": "2 - Evaluate",
+          "changed_date": "2025-12-16T19:21:54.000+0000"
+        },
+        {
+          "from_stage": "2 - Evaluate",
+          "to_stage": "3 - Validate",
+          "changed_date": "2025-12-16T19:22:16.000+0000"
+        },
+        {
+          "from_stage": "3 - Validate",
+          "to_stage": "4 - Propose",
+          "changed_date": "2025-12-16T19:23:21.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-02-06T13:18:36.000+0000"
+        }
+      ],
+      "days_in_current_stage": 52,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000rlIEHYA2/view"
+    },
+    {
+      "opportunity_id": "006IV00000yzC3MYAU",
+      "opportunity_name": "NASCAR Media Group - PSI - Expansion - Services - Amplifier - (2026-01-01 - 2026-12-31)",
+      "account_id": "0013g00000BahUfAAJ",
+      "account_name": "NASCAR Media Group",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 112500.0,
+      "converted_amount": 112500.0,
+      "close_date": "2026-01-27",
+      "probability": 100.0,
+      "owner": "Craig Pentland",
+      "owner_email": "craig.pentland@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-10-09T18:01:43.000+0000",
+      "last_activity_date": null,
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Amplifier",
+      "arr": 0.0,
+      "y1_arr": null,
+      "total_net_arr": 0.0,
+      "average_arr": 0.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 0.0,
+      "amplifier_acv": 112500.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Craig Pentland",
+      "stage_history": [
+        {
+          "from_stage": "0 - Lead",
+          "to_stage": "1 - Discover",
+          "changed_date": "2025-10-09T18:03:22.000+0000"
+        },
+        {
+          "from_stage": "1 - Discover",
+          "to_stage": "2 - Evaluate",
+          "changed_date": "2025-10-09T18:03:30.000+0000"
+        },
+        {
+          "from_stage": "2 - Evaluate",
+          "to_stage": "3 - Validate",
+          "changed_date": "2025-10-09T18:03:39.000+0000"
+        },
+        {
+          "from_stage": "1 - Renewal Pending",
+          "to_stage": "2 - Renewal Planning",
+          "changed_date": "2025-12-23T14:26:47.000+0000"
+        },
+        {
+          "from_stage": "3 - Validate",
+          "to_stage": "1 - Renewal Pending",
+          "changed_date": "2025-12-23T14:26:47.000+0000"
+        },
+        {
+          "from_stage": "2 - Renewal Planning",
+          "to_stage": "3 - Evaluate & Align",
+          "changed_date": "2026-01-28T19:51:55.000+0000"
+        },
+        {
+          "from_stage": "3 - Evaluate & Align",
+          "to_stage": "5 - Prepare Closing",
+          "changed_date": "2026-01-28T19:54:55.000+0000"
+        },
+        {
+          "from_stage": "5 - Prepare Closing",
+          "to_stage": "Renewal Delayed",
+          "changed_date": "2026-01-28T19:55:03.000+0000"
+        },
+        {
+          "from_stage": "Renewal Delayed",
+          "to_stage": "5 - Prepare Closing",
+          "changed_date": "2026-01-29T01:57:33.000+0000"
+        },
+        {
+          "from_stage": "5 - Prepare Closing",
+          "to_stage": "Renewal Delayed",
+          "changed_date": "2026-02-05T14:57:30.000+0000"
+        },
+        {
+          "from_stage": "Renewal Delayed",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-02-06T12:59:11.000+0000"
+        }
+      ],
+      "days_in_current_stage": 52,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000yzC3MYAU/view"
+    },
+    {
+      "opportunity_id": "006W500000m0q4cIAA",
+      "opportunity_name": "Straight Arrow News - PSI - New Business - SaaS + Services - Activation - (2026-02-01 - 2027-02-28)",
+      "account_id": "001IV00000IqOp0YAF",
+      "account_name": "Straight Arrow News",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 119000.0,
+      "converted_amount": 72923.08,
+      "close_date": "2026-02-02",
+      "probability": 100.0,
+      "owner": "Daniel Mcmenamin",
+      "owner_email": "daniel.mcmenamin@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2026-01-13T03:26:37.000+0000",
+      "last_activity_date": "2026-02-12",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "NEW",
+      "product_family": "Core",
+      "arr": 72923.08,
+      "y1_arr": 79000.0,
+      "total_net_arr": 72923.08,
+      "average_arr": 72923.08,
+      "analytics_acv": 0.0,
+      "activation_acv": 79000.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "New Business",
+      "se_lead": "Mark Dalton",
+      "se_lead_is_lead": true,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Daniel Mcmenamin",
+      "stage_history": [
+        {
+          "from_stage": "0 - Lead",
+          "to_stage": "1 - Discover",
+          "changed_date": "2026-01-13T20:52:37.000+0000"
+        },
+        {
+          "from_stage": "1 - Discover",
+          "to_stage": "2 - Evaluate",
+          "changed_date": "2026-01-13T20:52:44.000+0000"
+        },
+        {
+          "from_stage": "2 - Evaluate",
+          "to_stage": "3 - Validate",
+          "changed_date": "2026-01-19T19:58:17.000+0000"
+        },
+        {
+          "from_stage": "3 - Validate",
+          "to_stage": "4 - Propose",
+          "changed_date": "2026-01-27T01:49:17.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose",
+          "to_stage": "5 - Negotiate",
+          "changed_date": "2026-02-03T14:39:12.000+0000"
+        },
+        {
+          "from_stage": "5 - Negotiate",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-02-03T15:46:23.000+0000"
+        }
+      ],
+      "days_in_current_stage": 55,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006W500000m0q4cIAA/view"
+    },
+    {
+      "opportunity_id": "006IV00000RDyYHYA1",
+      "opportunity_name": "Time Out America LLC - PSI - Expansion - Services - Social - (2025-06-30 - 2026-06-29)",
+      "account_id": "0013g00000BVp0JAAT",
+      "account_name": "Time Out America LLC",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 32000.0,
+      "converted_amount": 32000.0,
+      "close_date": "2026-02-12",
+      "probability": 100.0,
+      "owner": "Craig Pentland",
+      "owner_email": "craig.pentland@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2024-07-25T08:37:02.000+0000",
+      "last_activity_date": "2026-02-11",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Social",
+      "arr": 0.0,
+      "y1_arr": null,
+      "total_net_arr": 0.0,
+      "average_arr": 0.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 0.0,
+      "amplifier_acv": 32000.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Craig Pentland",
+      "stage_history": [
+        {
+          "from_stage": "1 - Renewal Forecasted",
+          "to_stage": "4 - Churn Risk",
+          "changed_date": "2025-07-07T15:38:09.000+0000"
+        },
+        {
+          "from_stage": "4 - Churn Risk",
+          "to_stage": "5 - Negotiate",
+          "changed_date": "2025-12-09T15:39:07.000+0000"
+        },
+        {
+          "from_stage": "5 - Negotiate",
+          "to_stage": "5 - Prepare Closing",
+          "changed_date": "2025-12-16T09:00:21.000+0000"
+        },
+        {
+          "from_stage": "5 - Prepare Closing",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-02-26T13:54:15.000+0000"
+        }
+      ],
+      "days_in_current_stage": 32,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000RDyYHYA1/view"
+    },
+    {
+      "opportunity_id": "006W500000mS0JBIA0",
+      "opportunity_name": "Manhattan Institute - PSI - Expansion - Services - Activation - (2026-02-17 - 2026-08-16)",
+      "account_id": "0013g00000Bb9XxAAJ",
+      "account_name": "Manhattan Institute for Policy Research, Inc.",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 8000.0,
+      "converted_amount": 8000.0,
+      "close_date": "2026-02-17",
+      "probability": 100.0,
+      "owner": "Miranda Tossona",
+      "owner_email": "miranda.tossona@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2026-01-20T20:59:18.000+0000",
+      "last_activity_date": "2026-02-06",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 0.0,
+      "y1_arr": 0.0,
+      "total_net_arr": 0.0,
+      "average_arr": 0.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 8000.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Miranda Tossona",
+      "stage_history": [
+        {
+          "from_stage": "0 - Lead",
+          "to_stage": "5 - Negotiate",
+          "changed_date": "2026-02-09T20:42:10.000+0000"
+        },
+        {
+          "from_stage": "5 - Negotiate",
+          "to_stage": "4 - Propose",
+          "changed_date": "2026-02-09T20:52:50.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-02-18T08:39:56.000+0000"
+        }
+      ],
+      "days_in_current_stage": 40,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006W500000mS0JBIA0/view"
+    },
+    {
+      "opportunity_id": "006W500000mAoJHIA0",
+      "opportunity_name": "Outside - PSI - Expansion - Services - Activation - (2026-02-23 - 2026-04-10)",
+      "account_id": "0013g00000BVp8rAAD",
+      "account_name": "Outside Interactive, Inc.",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 4100.0,
+      "converted_amount": 4100.0,
+      "close_date": "2026-02-17",
+      "probability": 100.0,
+      "owner": "Calie Coghlan",
+      "owner_email": "calie.coghlan@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2026-01-15T16:26:17.000+0000",
+      "last_activity_date": "2026-03-03",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 0.0,
+      "y1_arr": null,
+      "total_net_arr": 0.0,
+      "average_arr": 0.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 4100.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Calie Coghlan",
+      "stage_history": [
+        {
+          "from_stage": "0 - Lead",
+          "to_stage": "5 - Negotiate",
+          "changed_date": "2026-02-18T01:45:14.000+0000"
+        },
+        {
+          "from_stage": "5 - Negotiate",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-02-18T09:28:57.000+0000"
+        }
+      ],
+      "days_in_current_stage": 40,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006W500000mAoJHIA0/view"
+    },
+    {
+      "opportunity_id": "006IV00000gGOFtYAO",
+      "opportunity_name": "Chicago Sun-Times - PSI - Renewal + Upsell - SaaS - Activation + Amplifier - (2026-02-01 - 2027-01-31)",
+      "account_id": "0013g00000BVGqcAAH",
+      "account_name": "Chicago Sun-Times Media, Inc.",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 169800.0,
+      "converted_amount": 4800.0,
+      "close_date": "2026-02-18",
+      "probability": 100.0,
+      "owner": "Calie Coghlan",
+      "owner_email": "calie.coghlan@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-02-03T11:11:59.000+0000",
+      "last_activity_date": "2026-02-23",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Activation + Amplifier",
+      "arr": 169800.0,
+      "y1_arr": 169800.0,
+      "total_net_arr": 4800.0,
+      "average_arr": 169800.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 168500.0,
+      "amplifier_acv": 1300.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Calie Coghlan",
+      "stage_history": [
+        {
+          "from_stage": "1 - Renewal Pending",
+          "to_stage": "2 - Renewal Planning",
+          "changed_date": "2025-12-16T11:26:23.000+0000"
+        },
+        {
+          "from_stage": "2 - Renewal Planning",
+          "to_stage": "3 - Evaluate & Align",
+          "changed_date": "2026-01-06T19:59:26.000+0000"
+        },
+        {
+          "from_stage": "3 - Evaluate & Align",
+          "to_stage": "4 - Propose & Negotiate",
+          "changed_date": "2026-01-14T20:46:39.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose & Negotiate",
+          "to_stage": "Renewal Delayed",
+          "changed_date": "2026-02-13T20:41:28.000+0000"
+        },
+        {
+          "from_stage": "Renewal Delayed",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-02-19T09:02:38.000+0000"
+        }
+      ],
+      "days_in_current_stage": 39,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000gGOFtYAO/view"
+    },
+    {
+      "opportunity_id": "006IV00000cp3ZAYAY",
+      "opportunity_name": "Le Devoir - PSI - Renewal + Upsell - SaaS - Activation + Analytics + Audience - (2026-03-01 - 2027-02-28)",
+      "account_id": "0013g00000Bb6hEAAR",
+      "account_name": "Le Devoir",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 205700.0,
+      "converted_amount": 9000.0,
+      "close_date": "2026-02-24",
+      "probability": 100.0,
+      "owner": "Alya Mbarek",
+      "owner_email": "alya.mbarek@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2024-12-20T16:21:51.000+0000",
+      "last_activity_date": "2026-02-25",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Activation + Analytics + Audience",
+      "arr": 205700.0,
+      "y1_arr": 205700.0,
+      "total_net_arr": 9000.0,
+      "average_arr": 205700.0,
+      "analytics_acv": 82850.0,
+      "activation_acv": 85050.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 37800.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Alya Mbarek",
+      "stage_history": [
+        {
+          "from_stage": "1 - Renewal Pending",
+          "to_stage": "2 - Renewal Planning",
+          "changed_date": "2025-12-16T11:26:14.000+0000"
+        },
+        {
+          "from_stage": "2 - Renewal Planning",
+          "to_stage": "3 - Evaluate & Align",
+          "changed_date": "2026-01-30T22:54:37.000+0000"
+        },
+        {
+          "from_stage": "3 - Evaluate & Align",
+          "to_stage": "4 - Propose & Negotiate",
+          "changed_date": "2026-02-17T14:40:25.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose & Negotiate",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-02-25T16:37:49.000+0000"
+        }
+      ],
+      "days_in_current_stage": 33,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000cp3ZAYAY/view"
+    },
+    {
+      "opportunity_id": "006IV00000iZ5mfYAC",
+      "opportunity_name": "Axios Media - PSI - Renewal + Upsell - SaaS - Activation - (2026-03-01 - 2027-02-28)",
+      "account_id": "0013g00000Bb9SBAAZ",
+      "account_name": "Axios Media",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 147000.0,
+      "converted_amount": 7000.0,
+      "close_date": "2026-03-01",
+      "probability": 100.0,
+      "owner": "Calie Coghlan",
+      "owner_email": "calie.coghlan@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-03-05T16:22:30.000+0000",
+      "last_activity_date": "2026-02-02",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 147000.0,
+      "y1_arr": 147000.0,
+      "total_net_arr": 7000.0,
+      "average_arr": 147000.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 147000.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Calie Coghlan",
+      "stage_history": [
+        {
+          "from_stage": "1 - Renewal Pending",
+          "to_stage": "2 - Renewal Planning",
+          "changed_date": "2025-12-16T11:26:32.000+0000"
+        },
+        {
+          "from_stage": "2 - Renewal Planning",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-03-05T08:17:19.000+0000"
+        }
+      ],
+      "days_in_current_stage": 25,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000iZ5mfYAC/view"
+    },
+    {
+      "opportunity_id": "006W500000o0KegIAE",
+      "opportunity_name": "Digiday Media, LLC - PSI - Expansion - Services - Activation - (2026-03-01 - 2026-05-31)",
+      "account_id": "0013g00000BVGqoAAH",
+      "account_name": "Digiday Media, LLC",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 18000.0,
+      "converted_amount": 18000.0,
+      "close_date": "2026-03-01",
+      "probability": 100.0,
+      "owner": "Miranda Tossona",
+      "owner_email": "miranda.tossona@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2026-02-17T16:08:53.000+0000",
+      "last_activity_date": null,
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 0.0,
+      "y1_arr": null,
+      "total_net_arr": 0.0,
+      "average_arr": 0.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 18000.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Miranda Tossona",
+      "stage_history": [
+        {
+          "from_stage": "2 - Renewal Planning",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-03-25T13:46:44.000+0000"
+        }
+      ],
+      "days_in_current_stage": 5,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006W500000o0KegIAE/view"
+    },
+    {
+      "opportunity_id": "006IV00000mhmgtYAA",
+      "opportunity_name": "The Dispatch - PSI - Renewal + Upsell - SaaS - Activation - (2026-04-01 - 2027-03-31)",
+      "account_id": "0013g00000Bb64FAAR",
+      "account_name": "The Dispatch",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 88000.0,
+      "converted_amount": 19000.0,
+      "close_date": "2026-03-03",
+      "probability": 100.0,
+      "owner": "Calie Coghlan",
+      "owner_email": "calie.coghlan@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-04-29T09:11:44.000+0000",
+      "last_activity_date": "2026-03-17",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 88000.0,
+      "y1_arr": 44000.0,
+      "total_net_arr": 19000.0,
+      "average_arr": 88000.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 88000.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Calie Coghlan",
+      "stage_history": [
+        {
+          "from_stage": "1 - Renewal Pending",
+          "to_stage": "2 - Renewal Planning",
+          "changed_date": "2025-12-16T11:26:48.000+0000"
+        },
+        {
+          "from_stage": "2 - Renewal Planning",
+          "to_stage": "3 - Evaluate & Align",
+          "changed_date": "2026-03-20T14:48:46.000+0000"
+        },
+        {
+          "from_stage": "3 - Evaluate & Align",
+          "to_stage": "4 - Propose & Negotiate",
+          "changed_date": "2026-03-20T14:49:08.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose & Negotiate",
+          "to_stage": "5 - Prepare Closing",
+          "changed_date": "2026-03-20T14:49:16.000+0000"
+        },
+        {
+          "from_stage": "5 - Prepare Closing",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-03-20T14:55:28.000+0000"
+        }
+      ],
+      "days_in_current_stage": 10,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000mhmgtYAA/view"
+    },
+    {
+      "opportunity_id": "006IV00000nmAQgYAM",
+      "opportunity_name": "CNBC LLC - PSI - Renewal + Upsell - SaaS + Services - Activation - (2026-02-13 - 2027-02-12)",
+      "account_id": "0013g00000BVGq8AAH",
+      "account_name": "CNBC LLC",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 505000.0,
+      "converted_amount": 192500.0,
+      "close_date": "2026-03-04",
+      "probability": 100.0,
+      "owner": "Victoria Rizzotte",
+      "owner_email": "victoria.rizzotte@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-05-14T09:49:17.000+0000",
+      "last_activity_date": "2026-02-20",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 385000.0,
+      "y1_arr": 385000.0,
+      "total_net_arr": 192500.0,
+      "average_arr": 385000.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 505000.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Victoria Rizzotte",
+      "stage_history": [
+        {
+          "from_stage": "1 - Renewal Pending",
+          "to_stage": "2 - Renewal Planning",
+          "changed_date": "2025-12-16T11:26:56.000+0000"
+        },
+        {
+          "from_stage": "2 - Renewal Planning",
+          "to_stage": "3 - Evaluate & Align",
+          "changed_date": "2026-01-27T22:17:11.000+0000"
+        },
+        {
+          "from_stage": "3 - Evaluate & Align",
+          "to_stage": "4 - Propose & Negotiate",
+          "changed_date": "2026-01-27T22:17:16.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose & Negotiate",
+          "to_stage": "5 - Prepare Closing",
+          "changed_date": "2026-01-27T22:17:23.000+0000"
+        },
+        {
+          "from_stage": "5 - Prepare Closing",
+          "to_stage": "Renewal Delayed",
+          "changed_date": "2026-03-04T14:21:05.000+0000"
+        },
+        {
+          "from_stage": "Renewal Delayed",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-03-09T08:52:32.000+0000"
+        }
+      ],
+      "days_in_current_stage": 21,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000nmAQgYAM/view"
+    },
+    {
+      "opportunity_id": "006IV00000mkN9GYAU",
+      "opportunity_name": "Penske Media - PSI - Expansion - SaaS - Activation - (2026-03-01 - 2026-07-31)",
+      "account_id": "0013g00000BVGtAAAX",
+      "account_name": "Penske Media Corporation",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 3870.0,
+      "converted_amount": 9000.0,
+      "close_date": "2026-03-12",
+      "probability": 100.0,
+      "owner": "Calie Coghlan",
+      "owner_email": "calie.coghlan@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-04-29T18:03:07.000+0000",
+      "last_activity_date": "2025-04-17",
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 20930.23,
+      "y1_arr": 9000.0,
+      "total_net_arr": 9000.0,
+      "average_arr": 9000.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 3870.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Calie Coghlan",
+      "stage_history": [
+        {
+          "from_stage": "1 - Discover",
+          "to_stage": "4 - Propose",
+          "changed_date": "2026-03-09T21:46:23.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose",
+          "to_stage": "5 - Negotiate",
+          "changed_date": "2026-03-09T21:46:29.000+0000"
+        },
+        {
+          "from_stage": "5 - Negotiate",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-03-13T08:33:12.000+0000"
+        }
+      ],
+      "days_in_current_stage": 17,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000mkN9GYAU/view"
+    },
+    {
+      "opportunity_id": "006IV00000lFwRjYAK",
+      "opportunity_name": "Casa Editorial El - PSI - Expansion - Services - Activation - (2026-03-20 - 2027-03-19)",
+      "account_id": "0013g00000BbAkxAAF",
+      "account_name": "Casa Editorial El Tiempo S.A.",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 2000.0,
+      "converted_amount": 2000.0,
+      "close_date": "2026-03-20",
+      "probability": 100.0,
+      "owner": "Johnny Kay",
+      "owner_email": "johnny.kay@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2025-04-09T09:57:26.000+0000",
+      "last_activity_date": null,
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 0.0,
+      "y1_arr": null,
+      "total_net_arr": 0.0,
+      "average_arr": 0.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 2000.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Johnny Kay",
+      "stage_history": [
+        {
+          "from_stage": "1 - Renewal Pending",
+          "to_stage": "2 - Renewal Planning",
+          "changed_date": "2025-12-16T11:26:40.000+0000"
+        },
+        {
+          "from_stage": "2 - Renewal Planning",
+          "to_stage": "0 - Lead",
+          "changed_date": "2026-03-30T09:59:17.000+0000"
+        },
+        {
+          "from_stage": "0 - Lead",
+          "to_stage": "1 - Discover",
+          "changed_date": "2026-03-30T09:59:26.000+0000"
+        },
+        {
+          "from_stage": "1 - Discover",
+          "to_stage": "2 - Evaluate",
+          "changed_date": "2026-03-30T10:07:48.000+0000"
+        },
+        {
+          "from_stage": "2 - Evaluate",
+          "to_stage": "3 - Validate",
+          "changed_date": "2026-03-30T10:07:55.000+0000"
+        },
+        {
+          "from_stage": "3 - Validate",
+          "to_stage": "4 - Propose",
+          "changed_date": "2026-03-30T10:08:02.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose",
+          "to_stage": "5 - Negotiate",
+          "changed_date": "2026-03-30T10:08:37.000+0000"
+        },
+        {
+          "from_stage": "5 - Negotiate",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-03-30T10:10:55.000+0000"
+        }
+      ],
+      "days_in_current_stage": 0,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000lFwRjYAK/view"
+    },
+    {
+      "opportunity_id": "006W500000oaJ5oIAE",
+      "opportunity_name": "Harvard Business - PSI - Expansion - Services - Activation - (2026-03-31 - 2026-06-30)",
+      "account_id": "0013g00000BahTkAAJ",
+      "account_name": "Harvard Business School Publishing Corporation",
+      "account_type": "Customer",
+      "stage": "6 - Closed Won / Handover",
+      "amount": 25000.0,
+      "converted_amount": 25000.0,
+      "close_date": "2026-03-24",
+      "probability": 100.0,
+      "owner": "Johnny Kay",
+      "owner_email": "johnny.kay@piano.io",
+      "is_closed": true,
+      "is_won": true,
+      "created_date": "2026-02-27T19:28:42.000+0000",
+      "last_activity_date": null,
+      "lead_source": null,
+      "fiscal": "2026 1",
+      "fiscal_quarter": 1,
+      "revenue_type": "EXPANSION",
+      "product_family": "Core",
+      "arr": 0.0,
+      "y1_arr": null,
+      "total_net_arr": 0.0,
+      "average_arr": 0.0,
+      "analytics_acv": 0.0,
+      "activation_acv": 25000.0,
+      "amplifier_acv": 0.0,
+      "audience_acv": 0.0,
+      "opportunity_type": "Expansion",
+      "se_lead": null,
+      "se_lead_is_lead": false,
+      "se_2": null,
+      "se_3": null,
+      "se_4": null,
+      "account_manager": "Johnny Kay",
+      "stage_history": [
+        {
+          "from_stage": "1 - Discover",
+          "to_stage": "2 - Evaluate",
+          "changed_date": "2026-03-25T07:56:46.000+0000"
+        },
+        {
+          "from_stage": "2 - Evaluate",
+          "to_stage": "3 - Validate",
+          "changed_date": "2026-03-25T07:56:54.000+0000"
+        },
+        {
+          "from_stage": "3 - Validate",
+          "to_stage": "4 - Propose",
+          "changed_date": "2026-03-25T07:57:09.000+0000"
+        },
+        {
+          "from_stage": "4 - Propose",
+          "to_stage": "5 - Negotiate",
+          "changed_date": "2026-03-25T07:57:22.000+0000"
+        },
+        {
+          "from_stage": "5 - Negotiate",
+          "to_stage": "6 - Closed Won / Handover",
+          "changed_date": "2026-03-25T07:57:38.000+0000"
+        }
+      ],
+      "days_in_current_stage": 5,
+      "has_runbook": false,
+      "runbook_version": null,
+      "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006W500000oaJ5oIAE/view"
     }
   ],
   "closing_this_week": [
@@ -3030,7 +4175,7 @@
           "changed_date": "2026-02-26T18:47:35.000+0000"
         }
       ],
-      "days_in_current_stage": 31,
+      "days_in_current_stage": 32,
       "has_runbook": false,
       "runbook_version": null,
       "sf_url": "https://piano.lightning.force.com/lightning/r/Opportunity/006IV00000yNWJDYA4/view"

@@ -276,7 +276,16 @@ export default function Dashboard() {
                   />
                 </div>
 
-                {/* Row 3: Closing This Week */}
+                {/* Row 3: Deals Closed This Quarter */}
+                <DealsTable
+                  deals={portfolioData.closed_this_quarter}
+                  title="Deals Closed This Quarter"
+                  showColumns={['account_name', 'converted_amount', 'close_date', 'se_lead', 'owner']}
+                  defaultSort="close_date"
+                  maxRows={20}
+                />
+
+                {/* Row 4: Closing This Week */}
                 <DealsTable
                   deals={portfolioData.closing_this_week}
                   title="Closing This Week"
