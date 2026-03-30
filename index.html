@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPIFFY - AI-Powered Sales Intelligence</title>
+    <meta name="description" content="Transform call transcripts into revenue intelligence. Reduce sales prep time from hours to minutes.">
+    
+    <!-- React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0a0e1a;
+            color: #f1f5f9;
+        }
+        
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .grain {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+        
+        .gradient-border {
+            border: 1px solid transparent;
+            background: linear-gradient(#0a0e1a, #0a0e1a) padding-box,
+                        linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.5)) border-box;
+        }
+        
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+        }
+        
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .feature-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .tab-button {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .tab-button.active::after {
+            width: 100%;
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .hero-grid {
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+        }
+        
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        
+        // Icon components using lucide
+        const Icon = ({ name, size = 24, ...props }) => {
+            useEffect(() => {
+                lucide.createIcons();
+            }, []);
+            return React.createElement('i', {
+                'data-lucide': name,
+                width: size,
+                height: size,
+                ...props
+            });
+        };
+
+        function SpiffyWebsite() {
+            const [scrollY, setScrollY] = useState(0);
+            const [activeTab, setActiveTab] = useState('runbooks');
+            const [spiffyAcronym, setSpiffyAcronym] = useState(null);
+            const [isGenerating, setIsGenerating] = useState(false);
+
+            useEffect(() => {
+                const handleScroll = () => setScrollY(window.scrollY);
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
+            useEffect(() => {
+                lucide.createIcons();
+            });
+
+            const generateSpiffy = () => {
+                const wordSets = {
+                    S: [
+                        'Strategic', 'Sales', 'Smart', 'Systematic', 'Streamlined', 'Superior', 
+                        'Sophisticated', 'Scalable', 'Standardized', 'Synergistic'
+                    ],
+                    P: [
+                        'Prospect', 'Pipeline', 'Process', 'Performance', 'Predictive', 'Proactive',
+                        'Playbook', 'Platform', 'Planning', 'Productivity'
+                    ],
+                    I: [
+                        'Insights', 'Intelligence', 'Information', 'Innovation', 'Integration',
+                        'Implementation', 'Infrastructure', 'Improvement', 'Impact'
+                    ],
+                    F: [
+                        'For', 'Framework', 'Forecasting', 'Focused', 'Facilitated',
+                        'Fast-tracked', 'Fueling', 'Foundation'
+                    ],
+                    F2: [
+                        'Forecasting', 'Framework', 'Focused', 'Foundation', 'Facilitated',
+                        'Fast-tracked', 'Fueling', 'For', 'Funneling'
+                    ],
+                    Y: [
+                        'Yearly', 'Yield', 'Year-round', 'Your', 'Yielding'
+                    ]
+                };
+
+                setIsGenerating(true);
+                
+                setTimeout(() => {
+                    const result = {
+                        S: wordSets.S[Math.floor(Math.random() * wordSets.S.length)],
+                        P: wordSets.P[Math.floor(Math.random() * wordSets.P.length)],
+                        I: wordSets.I[Math.floor(Math.random() * wordSets.I.length)],
+                        F1: wordSets.F[Math.floor(Math.random() * wordSets.F.length)],
+                        F2: wordSets.F2[Math.floor(Math.random() * wordSets.F2.length)],
+                        Y: wordSets.Y[Math.floor(Math.random() * wordSets.Y.length)]
+                    };
+                    
+                    setSpiffyAcronym(result);
+                    setIsGenerating(false);
+                }, 800);
+            };
+
+            const stats = [
+                { value: '15min', label: 'Prep Time', sublabel: 'vs 2-3 hours manual' },
+                { value: '93%', label: 'Time Saved', sublabel: 'on deal documentation' },
+                { value: '6+', label: 'Document Types', sublabel: 'auto-generated' },
+                { value: '$350K', label: 'Avg Deal Size', sublabel: 'processed' }
+            ];
+
+            const documentTypes = {
+                runbooks: {
+                    title: 'Sales Runbooks',
+                    description: 'Living documents that evolve with every customer interaction',
+                    features: [
+                        'Account context & stakeholder mapping',
+                        'Technical requirements extraction',
+                        'Competitive intelligence gathering',
+                        'Use case identification',
+                        'Next steps & action items'
+                    ]
+                },
+                handovers: {
+                    title: 'Handover Documents',
+                    description: 'Seamless knowledge transfer across your revenue teams',
+                    features: [
+                        'Deal history & timeline',
+                        'Key decision criteria',
+                        'Technical specifications',
+                        'Implementation requirements',
+                        'Success metrics & KPIs'
+                    ]
+                },
+                health: {
+                    title: 'Deal Health Reports',
+                    description: 'Real-time risk assessment and opportunity scoring',
+                    features: [
+                        'MEDDPICC qualification scoring',
+                        'Risk factor identification',
+                        'Stakeholder engagement analysis',
+                        'Competitive threat assessment',
+                        'Win probability calculation'
+                    ]
+                }
+            };
+
+            return (
+                <div style={{ backgroundColor: '#0a0e1a', color: '#f1f5f9', minHeight: '100vh', overflow: 'hidden' }}>
+                    {/* Navigation */}
+                    <nav style={{ 
+                        position: 'fixed', 
+                        top: 0, 
+                        width: '100%', 
+                        backgroundColor: 'rgba(10, 14, 26, 0.8)', 
+                        backdropFilter: 'blur(12px)',
+                        borderBottom: '1px solid #1f2937',
+                        zIndex: 50,
+                        padding: '1rem 1.5rem'
+                    }}>
+                        <div style={{ maxWidth: '80rem', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                <div style={{ 
+                                    width: '40px', 
+                                    height: '40px', 
+                                    background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                                    borderRadius: '0.5rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontFamily: "'JetBrains Mono', monospace",
+                                    fontWeight: 'bold',
+                                    fontSize: '1.125rem'
+                                }}>
+                                    S
+                                </div>
+                                <div>
+                                    <div style={{ fontSize: '1.25rem', fontWeight: 'bold', letterSpacing: '-0.025em' }}>SPIFFY</div>
+                                    <div style={{ fontSize: '0.75rem', color: '#6b7280', fontFamily: "'JetBrains Mono', monospace" }}>spiffydocs.ai</div>
+                                </div>
+                            </div>
+                            
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+                                <a href="#features" style={{ fontSize: '0.875rem', color: '#f1f5f9', textDecoration: 'none' }}>Features</a>
+                                <a href="#how-it-works" style={{ fontSize: '0.875rem', color: '#f1f5f9', textDecoration: 'none' }}>How It Works</a>
+                                <a href="#pricing" style={{ fontSize: '0.875rem', color: '#f1f5f9', textDecoration: 'none' }}>Pricing</a>
+                                <button style={{ 
+                                    padding: '0.5rem 1.25rem', 
+                                    backgroundColor: '#2563eb', 
+                                    borderRadius: '0.5rem',
+                                    fontSize: '0.875rem',
+                                    fontWeight: 500,
+                                    border: 'none',
+                                    color: 'white',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem'
+                                }}>
+                                    Get Started <Icon name="arrow-right" size={14} />
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <section style={{ position: 'relative', paddingTop: '8rem', paddingBottom: '5rem', padding: '8rem 1.5rem 5rem' }}>
+                        <div className="hero-grid" style={{ position: 'absolute', inset: 0, opacity: 0.3 }}></div>
+                        <div className="grain" style={{ position: 'absolute', inset: 0 }}></div>
+                        
+                        <div style={{ maxWidth: '80rem', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+                            <div style={{ textAlign: 'center', maxWidth: '64rem', margin: '0 auto' }}>
+                                <div className="animate-slide-up" style={{ 
+                                    display: 'inline-block',
+                                    padding: '0.5rem 1rem',
+                                    backgroundColor: 'rgba(30, 58, 138, 0.3)',
+                                    border: '1px solid rgba(30, 64, 175, 0.3)',
+                                    borderRadius: '9999px',
+                                    fontSize: '0.875rem',
+                                    color: '#60a5fa',
+                                    fontFamily: "'JetBrains Mono', monospace",
+                                    marginBottom: '2rem'
+                                }}>
+                                    ⚡ AI-Powered Sales Intelligence
+                                </div>
+                                
+                                <h1 className="animate-slide-up delay-100" style={{ 
+                                    fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
+                                    fontWeight: 900, 
+                                    marginBottom: '1.5rem',
+                                    lineHeight: 1.1
+                                }}>
+                                    Transform Call Transcripts Into
+                                    <br />
+                                    <span style={{ 
+                                        background: 'linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6)',
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        backgroundClip: 'text'
+                                    }}>
+                                        Revenue Intelligence
+                                    </span>
+                                </h1>
+                                
+                                <p className="animate-slide-up delay-200" style={{ 
+                                    fontSize: '1.25rem', 
+                                    color: '#9ca3af', 
+                                    marginBottom: '3rem',
+                                    maxWidth: '42rem',
+                                    margin: '0 auto 3rem',
+                                    lineHeight: 1.6
+                                }}>
+                                    SPIFFY automatically converts your Gong calls and Salesforce data into actionable sales documents. 
+                                    Reduce prep time from <span style={{ color: '#60a5fa', fontWeight: 600 }}>hours to minutes</span>.
+                                </p>
+                                
+                                <div className="animate-slide-up delay-300" style={{ 
+                                    display: 'flex', 
+                                    flexDirection: 'column',
+                                    alignItems: 'center', 
+                                    justifyContent: 'center', 
+                                    gap: '1rem',
+                                    marginBottom: '5rem'
+                                }}>
+                                    <button className="glow-blue" style={{ 
+                                        padding: '1rem 2rem', 
+                                        backgroundColor: '#2563eb',
+                                        borderRadius: '0.75rem',
+                                        fontSize: '1.125rem',
+                                        fontWeight: 600,
+                                        border: 'none',
+                                        color: 'white',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        width: 'fit-content'
+                                    }}>
+                                        Start Free Trial <Icon name="arrow-right" size={20} />
+                                    </button>
+                                </div>
+
+                                {/* Stats Grid */}
+                                <div style={{ 
+                                    display: 'grid', 
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                                    gap: '1rem',
+                                    maxWidth: '64rem',
+                                    margin: '0 auto'
+                                }}>
+                                    {stats.map((stat, i) => (
+                                        <div 
+                                            key={i} 
+                                            className={`stat-card gradient-border animate-slide-up delay-${(i + 1) * 100}`}
+                                            style={{
+                                                borderRadius: '0.75rem',
+                                                padding: '1.5rem',
+                                                textAlign: 'center',
+                                                background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.5), rgba(31, 41, 55, 0.3))'
+                                            }}
+                                        >
+                                            <div style={{ 
+                                                fontSize: 'clamp(1.875rem, 4vw, 2.25rem)', 
+                                                fontWeight: 'bold', 
+                                                marginBottom: '0.5rem',
+                                                fontFamily: "'JetBrains Mono', monospace",
+                                                color: '#60a5fa'
+                                            }}>
+                                                {stat.value}
+                                            </div>
+                                            <div style={{ fontSize: '0.875rem', fontWeight: 600, color: '#d1d5db', marginBottom: '0.25rem' }}>
+                                                {stat.label}
+                                            </div>
+                                            <div style={{ fontSize: '0.75rem', color: '#6b7280' }}>
+                                                {stat.sublabel}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Founders Section */}
+                    <section style={{ 
+                        padding: '5rem 1.5rem',
+                        background: 'linear-gradient(180deg, #0a0e1a, #0f1420)'
+                    }}>
+                        <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                                <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, marginBottom: '1rem' }}>
+                                    Built for Salespeople
+                                    <br />
+                                    <span style={{ 
+                                        background: 'linear-gradient(90deg, #60a5fa, #a78bfa)',
+                                        WebkitBackgroundClip: 'text',
+                                        WebkitTextFillColor: 'transparent',
+                                        backgroundClip: 'text'
+                                    }}>
+                                        by Salespeople
+                                    </span>
+                                </h2>
+                                <p style={{ fontSize: '1.25rem', color: '#9ca3af', maxWidth: '42rem', margin: '0 auto' }}>
+                                    Over 40 years of combined frontline sales experience. We've felt the pain. We built the solution.
+                                </p>
+                            </div>
+
+                            <div style={{ 
+                                display: 'grid', 
+                                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+                                gap: '2rem',
+                                maxWidth: '64rem',
+                                margin: '0 auto 4rem'
+                            }}>
+                                <div className="gradient-border" style={{
+                                    borderRadius: '1rem',
+                                    padding: '2rem',
+                                    background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.5))'
+                                }}>
+                                    <div style={{
+                                        width: '80px',
+                                        height: '80px',
+                                        background: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+                                        borderRadius: '1rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '1.875rem',
+                                        fontWeight: 'bold',
+                                        margin: '0 auto 1.5rem'
+                                    }}>
+                                        MD
+                                    </div>
+                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', textAlign: 'center' }}>
+                                        Mark Dalton
+                                    </h3>
+                                    <p style={{ color: '#60a5fa', textAlign: 'center', marginBottom: '1rem', fontWeight: 600 }}>
+                                        Co-Founder
+                                    </p>
+                                    <p style={{ color: '#9ca3af', lineHeight: 1.6 }}>
+                                        20+ years in presales and solutions engineering. Mark knows the 2-3 hour prep grind before every call. 
+                                        He built SPIFFY to get those hours back and help SEs focus on what matters: winning deals.
+                                    </p>
+                                </div>
+
+                                <div className="gradient-border" style={{
+                                    borderRadius: '1rem',
+                                    padding: '2rem',
+                                    background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.5))'
+                                }}>
+                                    <div style={{
+                                        width: '80px',
+                                        height: '80px',
+                                        background: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
+                                        borderRadius: '1rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '1.875rem',
+                                        fontWeight: 'bold',
+                                        margin: '0 auto 1.5rem'
+                                    }}>
+                                        TT
+                                    </div>
+                                    <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', textAlign: 'center' }}>
+                                        Todd Trippany
+                                    </h3>
+                                    <p style={{ color: '#a78bfa', textAlign: 'center', marginBottom: '1rem', fontWeight: 600 }}>
+                                        Co-Founder
+                                    </p>
+                                    <p style={{ color: '#9ca3af', lineHeight: 1.6 }}>
+                                        20+ years as an Account Executive carrying quota and closing deals. Todd understands the chaos of managing 
+                                        multiple opportunities and the need for instant intelligence on every account.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div style={{ 
+                                display: 'grid', 
+                                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                                gap: '2rem',
+                                maxWidth: '64rem',
+                                margin: '0 auto'
+                            }}>
+                                <div style={{ textAlign: 'center', padding: '1.5rem' }}>
+                                    <Icon name="clock" size={40} style={{ margin: '0 auto 0.75rem', color: '#60a5fa' }} />
+                                    <div style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '0.5rem', fontFamily: "'JetBrains Mono', monospace", color: '#60a5fa' }}>
+                                        40+
+                                    </div>
+                                    <div style={{ color: '#9ca3af', fontSize: '0.875rem' }}>
+                                        Years Combined Sales Experience
+                                    </div>
+                                </div>
+
+                                <div style={{ textAlign: 'center', padding: '1.5rem' }}>
+                                    <Icon name="target" size={40} style={{ margin: '0 auto 0.75rem', color: '#a78bfa' }} />
+                                    <div style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '0.5rem', fontFamily: "'JetBrains Mono', monospace", color: '#a78bfa' }}>
+                                        1000s
+                                    </div>
+                                    <div style={{ color: '#9ca3af', fontSize: '0.875rem' }}>
+                                        of Deals Closed
+                                    </div>
+                                </div>
+
+                                <div style={{ textAlign: 'center', padding: '1.5rem' }}>
+                                    <Icon name="trending-up" size={40} style={{ margin: '0 auto 0.75rem', color: '#f472b6' }} />
+                                    <div style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '0.5rem', fontFamily: "'JetBrains Mono', monospace", color: '#f472b6' }}>
+                                        93%
+                                    </div>
+                                    <div style={{ color: '#9ca3af', fontSize: '0.875rem' }}>
+                                        Time Saved on Prep
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* SPIFFY Acronym Generator */}
+                    <section style={{ padding: '5rem 1.5rem' }}>
+                        <div style={{ maxWidth: '64rem', margin: '0 auto' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                                <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, marginBottom: '1rem' }}>
+                                    Make SPIFFY
+                                    <br />
+                                    <span style={{ color: '#6b7280' }}>Your Own</span>
+                                </h2>
+                                <p style={{ fontSize: '1.25rem', color: '#9ca3af', maxWidth: '42rem', margin: '0 auto' }}>
+                                    Generate your own SPIFFY acronym. Because every sales team deserves their own take on intelligence.
+                                </p>
+                            </div>
+
+                            <div className="gradient-border" style={{
+                                borderRadius: '1rem',
+                                padding: '2rem',
+                                background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.5))',
+                                textAlign: 'center'
+                            }}>
+                                {!spiffyAcronym ? (
+                                    <div>
+                                        <div style={{ 
+                                            fontSize: 'clamp(2.5rem, 6vw, 3.75rem)', 
+                                            fontWeight: 900, 
+                                            marginBottom: '2rem',
+                                            fontFamily: "'JetBrains Mono', monospace"
+                                        }}>
+                                            ✨ SPIFFY ✨
+                                        </div>
+                                        <button
+                                            onClick={generateSpiffy}
+                                            disabled={isGenerating}
+                                            className="glow-blue"
+                                            style={{
+                                                padding: '1rem 2rem',
+                                                backgroundColor: isGenerating ? '#4b5563' : '#2563eb',
+                                                borderRadius: '0.75rem',
+                                                fontSize: '1.125rem',
+                                                fontWeight: 600,
+                                                border: 'none',
+                                                color: 'white',
+                                                cursor: isGenerating ? 'not-allowed' : 'pointer',
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                gap: '0.5rem'
+                                            }}
+                                        >
+                                            {isGenerating ? (
+                                                <>
+                                                    <div className="spinner" style={{
+                                                        width: '20px',
+                                                        height: '20px',
+                                                        border: '2px solid white',
+                                                        borderTop: '2px solid transparent',
+                                                        borderRadius: '50%'
+                                                    }}></div>
+                                                    Generating...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Icon name="zap" size={20} />
+                                                    Generate My SPIFFY
+                                                </>
+                                            )}
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <div className="animate-slide-up">
+                                        <div style={{ 
+                                            fontSize: 'clamp(2rem, 4vw, 2.5rem)', 
+                                            fontWeight: 900, 
+                                            marginBottom: '1.5rem',
+                                            fontFamily: "'JetBrains Mono', monospace"
+                                        }}>
+                                            ✨ SPIFFY ✨
+                                        </div>
+                                        <div style={{
+                                            borderTop: '1px solid #374151',
+                                            borderBottom: '1px solid #374151',
+                                            padding: '1.5rem',
+                                            marginBottom: '2rem'
+                                        }}>
+                                            <div style={{ 
+                                                fontSize: 'clamp(1.25rem, 3vw, 1.875rem)', 
+                                                fontWeight: 'bold',
+                                                lineHeight: 1.6
+                                            }}>
+                                                <span style={{ color: '#60a5fa' }}>{spiffyAcronym.S}</span>{' '}
+                                                <span style={{ color: '#a78bfa' }}>{spiffyAcronym.P}</span>{' '}
+                                                <span style={{ color: '#f472b6' }}>{spiffyAcronym.I}</span>{' '}
+                                                <span style={{ color: '#06b6d4' }}>{spiffyAcronym.F1}</span>{' '}
+                                                <span style={{ color: '#fb923c' }}>{spiffyAcronym.F2}</span>{' '}
+                                                <span style={{ color: '#34d399' }}>{spiffyAcronym.Y}</span>
+                                            </div>
+                                        </div>
+                                        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                            <button
+                                                onClick={generateSpiffy}
+                                                style={{
+                                                    padding: '0.75rem 1.5rem',
+                                                    backgroundColor: '#2563eb',
+                                                    borderRadius: '0.5rem',
+                                                    fontWeight: 600,
+                                                    border: 'none',
+                                                    color: 'white',
+                                                    cursor: 'pointer',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    gap: '0.5rem'
+                                                }}
+                                            >
+                                                <Icon name="zap" size={18} />
+                                                Generate Another
+                                            </button>
+                                            <button
+                                                onClick={() => {
+                                                    const text = `✨ SPIFFY ✨\n${spiffyAcronym.S} ${spiffyAcronym.P} ${spiffyAcronym.I} ${spiffyAcronym.F1} ${spiffyAcronym.F2} ${spiffyAcronym.Y}`;
+                                                    navigator.clipboard.writeText(text);
+                                                }}
+                                                style={{
+                                                    padding: '0.75rem 1.5rem',
+                                                    backgroundColor: '#374151',
+                                                    borderRadius: '0.5rem',
+                                                    fontWeight: 600,
+                                                    border: 'none',
+                                                    color: 'white',
+                                                    cursor: 'pointer'
+                                                }}
+                                            >
+                                                Copy to Clipboard
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
+                            <p style={{ textAlign: 'center', color: '#6b7280', fontSize: '0.875rem', marginTop: '1.5rem' }}>
+                                Pro tip: Use your custom SPIFFY in team meetings, Slack channels, or email signatures 🚀
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* CTA Section */}
+                    <section style={{ 
+                        padding: '5rem 1.5rem',
+                        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.3), rgba(91, 33, 182, 0.3))',
+                        borderTop: '1px solid #1f2937',
+                        borderBottom: '1px solid #1f2937'
+                    }}>
+                        <div style={{ maxWidth: '64rem', margin: '0 auto', textAlign: 'center' }}>
+                            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, marginBottom: '1.5rem' }}>
+                                Ready to 10X Your
+                                <br />
+                                Sales Intelligence?
+                            </h2>
+                            <p style={{ fontSize: '1.25rem', color: '#9ca3af', marginBottom: '2rem' }}>
+                                Join forward-thinking revenue teams using SPIFFY to automate their sales documentation.
+                            </p>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                                <button className="glow-blue" style={{
+                                    padding: '1rem 2rem',
+                                    backgroundColor: '#2563eb',
+                                    borderRadius: '0.75rem',
+                                    fontSize: '1.125rem',
+                                    fontWeight: 600,
+                                    border: 'none',
+                                    color: 'white',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem'
+                                }}>
+                                    Start Free Trial <Icon name="arrow-right" size={20} />
+                                </button>
+                            </div>
+                            <p style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '1.5rem' }}>
+                                No credit card required • 14-day free trial • Cancel anytime
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer style={{ padding: '3rem 1.5rem', borderTop: '1px solid #1f2937' }}>
+                        <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+                            <div style={{ 
+                                display: 'grid', 
+                                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                                gap: '2rem',
+                                marginBottom: '2rem'
+                            }}>
+                                <div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                                        <div style={{ 
+                                            width: '40px', 
+                                            height: '40px', 
+                                            background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                                            borderRadius: '0.5rem',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            fontFamily: "'JetBrains Mono', monospace",
+                                            fontWeight: 'bold'
+                                        }}>
+                                            S
+                                        </div>
+                                        <div style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>SPIFFY</div>
+                                    </div>
+                                    <p style={{ fontSize: '0.875rem', color: '#9ca3af' }}>
+                                        AI-powered sales intelligence for modern revenue teams.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h4 style={{ fontWeight: 600, marginBottom: '1rem' }}>Product</h4>
+                                    <ul style={{ listStyle: 'none', fontSize: '0.875rem', color: '#9ca3af' }}>
+                                        <li style={{ marginBottom: '0.5rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Features</a></li>
+                                        <li style={{ marginBottom: '0.5rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Pricing</a></li>
+                                        <li style={{ marginBottom: '0.5rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Integrations</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 style={{ fontWeight: 600, marginBottom: '1rem' }}>Company</h4>
+                                    <ul style={{ listStyle: 'none', fontSize: '0.875rem', color: '#9ca3af' }}>
+                                        <li style={{ marginBottom: '0.5rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>About</a></li>
+                                        <li style={{ marginBottom: '0.5rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a></li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 style={{ fontWeight: 600, marginBottom: '1rem' }}>Legal</h4>
+                                    <ul style={{ listStyle: 'none', fontSize: '0.875rem', color: '#9ca3af' }}>
+                                        <li style={{ marginBottom: '0.5rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy</a></li>
+                                        <li style={{ marginBottom: '0.5rem' }}><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Terms</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div style={{ 
+                                paddingTop: '2rem', 
+                                borderTop: '1px solid #1f2937',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                gap: '1rem',
+                                fontSize: '0.875rem',
+                                color: '#6b7280'
+                            }}>
+                                <p>
+                                    © 2026 SPIFFY. All rights reserved. <span style={{ fontFamily: "'JetBrains Mono', monospace" }}>spiffydocs.ai</span>
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<SpiffyWebsite />, document.getElementById('root'));
+    </script>
+</body>
+</html>
