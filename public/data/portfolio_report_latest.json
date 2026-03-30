@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T14:48:23.167300",
+  "generated_at": "2026-03-30T14:55:36.715659",
   "period": "Q1 2026",
   "region": "AMER",
   "attainment": {
@@ -2093,7 +2093,7 @@
           "changed_date": "2025-12-08T19:55:24.000+0000"
         }
       ],
-      "days_in_current_stage": 111,
+      "days_in_current_stage": 112,
       "has_runbook": false,
       "runbook_version": null,
       "weighted_value": 1400.0,
@@ -2138,7 +2138,7 @@
       "se_4": null,
       "account_manager": "Calie Coghlan",
       "stage_history": [],
-      "days_in_current_stage": 45,
+      "days_in_current_stage": 46,
       "has_runbook": false,
       "runbook_version": null,
       "weighted_value": 0.0,
@@ -2464,7 +2464,7 @@
           "changed_date": "2025-12-08T19:55:24.000+0000"
         }
       ],
-      "days_in_current_stage": 111,
+      "days_in_current_stage": 112,
       "has_runbook": false,
       "runbook_version": null,
       "weighted_value": 1400.0,
@@ -2509,7 +2509,7 @@
       "se_4": null,
       "account_manager": "Calie Coghlan",
       "stage_history": [],
-      "days_in_current_stage": 45,
+      "days_in_current_stage": 46,
       "has_runbook": false,
       "runbook_version": null,
       "weighted_value": 0.0,
