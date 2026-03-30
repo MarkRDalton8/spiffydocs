@@ -184,6 +184,7 @@ export interface PortfolioData {
 
   closed_this_quarter: Deal[]
   closing_this_week: Deal[]
+  slipped_deals: Deal[]
   closing_this_quarter: Deal[]
 
   stale_deals: StaleDeal[]

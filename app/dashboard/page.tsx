@@ -280,7 +280,7 @@ export default function Dashboard() {
                 <DealsTable
                   deals={portfolioData.closed_this_quarter}
                   title="Deals Closed This Quarter"
-                  showColumns={['account_name', 'converted_amount', 'close_date', 'se_lead', 'owner']}
+                  showColumns={['account_name', 'converted_amount', 'close_date', 'se_lead', 'owner', 'revenue_type']}
                   defaultSort="close_date"
                   maxRows={20}
                 />
@@ -289,8 +289,19 @@ export default function Dashboard() {
                 <DealsTable
                   deals={portfolioData.closing_this_week}
                   title="Closing This Week"
+                  showColumns={['account_name', 'converted_amount', 'probability', 'weighted_value', 'close_date', 'se_lead', 'owner', 'stage', 'revenue_type']}
                   defaultSort="weighted_value"
                 />
+
+                {/* Row 5: Slipped Deals */}
+                {portfolioData.slipped_deals && portfolioData.slipped_deals.length > 0 && (
+                  <DealsTable
+                    deals={portfolioData.slipped_deals}
+                    title="Slipped Deals"
+                    showColumns={['account_name', 'converted_amount', 'probability', 'weighted_value', 'close_date', 'se_lead', 'owner', 'stage', 'revenue_type']}
+                    defaultSort="weighted_value"
+                  />
+                )}
 
                 {/* Row 4: Stale & Dark Deals */}
                 {(portfolioData.stale_deals.length > 0 || portfolioData.dark_deals.length > 0) && (
@@ -516,7 +527,7 @@ export default function Dashboard() {
                 <DealsTable
                   deals={portfolioData.closing_this_quarter.filter(d => d.se_lead)}
                   title="Deals with SE Assigned"
-                  showColumns={['se_lead', 'account_name', 'converted_amount', 'stage', 'weighted_value', 'close_date']}
+                  showColumns={['se_lead', 'account_name', 'converted_amount', 'stage', 'weighted_value', 'close_date', 'revenue_type']}
                   defaultSort="weighted_value"
                   maxRows={20}
                 />
@@ -615,6 +626,7 @@ export default function Dashboard() {
                 <DealsTable
                   deals={filteredDeals}
                   title={`All Deals (${filteredDeals.length})`}
+                  showColumns={['account_name', 'converted_amount', 'probability', 'weighted_value', 'close_date', 'se_lead', 'owner', 'stage', 'revenue_type']}
                   defaultSort="weighted_value"
                 />
               </div>

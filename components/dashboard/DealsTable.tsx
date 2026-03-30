@@ -15,6 +15,12 @@ interface DealsTableProps {
   maxRows?: number
 }
 
+const getTypeDisplay = (type: string) => {
+  if (type === 'NEW') return 'Net New'
+  if (type === 'EXPANSION') return 'Expansion'
+  return type
+}
+
 const stageBadgeColors: Record<string, string> = {
   '5 - Negotiate': 'bg-emerald-500/10 text-emerald-400 border-emerald-500',
   '6 - Closed Won': 'bg-emerald-500/10 text-emerald-400 border-emerald-500',
@@ -155,6 +161,11 @@ export function DealsTable({
                   Stage
                 </th>
               )}
+              {showColumns.includes('revenue_type') && (
+                <th className="px-4 py-3 text-center text-xs font-medium text-slate-400 uppercase tracking-wider">
+                  Type
+                </th>
+              )}
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-700">
@@ -210,6 +221,13 @@ export function DealsTable({
                 )}
                 {showColumns.includes('stage') && (
                   <td className="px-4 py-3">{getStageBadge(deal.stage)}</td>
+                )}
+                {showColumns.includes('revenue_type') && (
+                  <td className="px-4 py-3 text-center">
+                    <span className="text-xs font-medium text-slate-300">
+                      {getTypeDisplay(deal.revenue_type)}
+                    </span>
+                  </td>
                 )}
               </tr>
             ))}
