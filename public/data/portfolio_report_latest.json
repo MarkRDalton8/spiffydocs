@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T13:23:03.001122",
+  "generated_at": "2026-03-30T13:45:30.311112",
   "period": "Q1 2026",
   "region": "AMER",
   "attainment": {
@@ -636,7 +636,7 @@
       "se_4": null,
       "account_manager": "Miranda Tossona",
       "stage_history": [],
-      "days_in_current_stage": 23,
+      "days_in_current_stage": 24,
       "has_runbook": false,
       "runbook_version": null,
       "weighted_value": 1500.0,
@@ -1699,7 +1699,7 @@
       "se_4": null,
       "account_manager": "Miranda Tossona",
       "stage_history": [],
-      "days_in_current_stage": 23,
+      "days_in_current_stage": 24,
       "has_runbook": false,
       "runbook_version": null,
       "weighted_value": 1500.0,
