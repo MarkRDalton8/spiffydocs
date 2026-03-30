@@ -2,8 +2,17 @@
 
 import { useState } from 'react'
 
+interface SpiffyAcronym {
+  S: string
+  P: string
+  I: string
+  F1: string
+  F2: string
+  Y: string
+}
+
 export default function Home() {
-  const [spiffyAcronym, setSpiffyAcronym] = useState<any>(null)
+  const [spiffyAcronym, setSpiffyAcronym] = useState<SpiffyAcronym | null>(null)
   const [isGenerating, setIsGenerating] = useState(false)
 
   const generateSpiffy = () => {
@@ -121,7 +130,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Over 40 years of combined frontline sales experience. We've felt the pain. We built the solution.
+              Over 40 years of combined frontline sales experience. We&apos;ve felt the pain. We built the solution.
             </p>
           </div>
 
