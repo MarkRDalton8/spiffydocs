@@ -17,6 +17,20 @@ const handler = NextAuth({
     signIn: '/login',
   },
   callbacks: {
+    async signIn({ user, account, profile }) {
+      // Whitelist: only allow specific email addresses
+      const allowedEmailsEnv = process.env.ALLOWED_EMAILS || 'markrdalton8@gmail.com,mark@spiffydocs.ai,admin@spiffydocs.ai'
+      const allowedEmails = allowedEmailsEnv.split(',').map(e => e.trim().toLowerCase())
+
+      const email = user.email?.toLowerCase() || ''
+
+      if (allowedEmails.includes(email)) {
+        return true // Allow sign in
+      }
+
+      console.log(`Sign-in denied for email: ${email}`)
+      return false // Deny sign in
+    },
     async session({ session }) {
       return session
     },

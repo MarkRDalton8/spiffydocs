@@ -12,6 +12,7 @@ import { SEBreakdownChart } from '@/components/dashboard/SEBreakdownChart'
 import { DirectorCards } from '@/components/dashboard/DirectorCards'
 import { ProductMixChart } from '@/components/dashboard/ProductMixChart'
 import { RefreshButton } from '@/components/dashboard/RefreshButton'
+import { StageConversionTable } from '@/components/dashboard/StageConversionTable'
 
 type Tab = 'overview' | 'pipeline' | 'team' | 'deals'
 
@@ -498,6 +499,14 @@ export default function Dashboard() {
                     </div>
                   </div>
                 </div>
+
+                {/* Row 6: Stage Conversion Funnel */}
+                {portfolioData.stage_conversions && (
+                  <StageConversionTable
+                    stageConversions={portfolioData.stage_conversions}
+                    baseline={portfolioData.baseline?.stage_conversions}
+                  />
+                )}
               </div>
             )}
 

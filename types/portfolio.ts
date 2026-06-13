@@ -126,6 +126,24 @@ export interface TypeMetrics {
   new_logos?: number
 }
 
+export interface StageConversion {
+  last_nb_rate: number
+  last_nb_from: number
+  last_nb_to: number
+  last_exp_rate: number
+  last_exp_from: number
+  last_exp_to: number
+}
+
+export interface BaselineStageConversion {
+  nb_conversion_rate: number
+  nb_reached_from: number
+  nb_reached_to: number
+  exp_conversion_rate: number
+  exp_reached_from: number
+  exp_reached_to: number
+}
+
 export interface PortfolioData {
   generated_at: string
   period: string
@@ -195,5 +213,11 @@ export interface PortfolioData {
   nb_vs_expansion: {
     new_business: TypeMetrics
     expansion: TypeMetrics
+  }
+
+  stage_conversions?: Record<string, StageConversion>
+
+  baseline?: {
+    stage_conversions?: Record<string, BaselineStageConversion>
   }
 }
